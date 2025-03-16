@@ -52,13 +52,19 @@ npm start
 
 ### The project will run on http://localhost:3000/
 
+---
+
 📢 Contributing
 Contributions are welcome! If you find an issue or want to enhance this project, feel free to submit a pull request.
 
 📬 Contact
+```
 📧 Email: karthikeyanks463@gmail.com
+
 🌐 Portfolio:karthi-dev.web.app
+
 🐙 GitHub: https://github.com/karthi-AI-hub
+
 💼 LinkedIn: your-linkedin-profile
 
 ✅ License
