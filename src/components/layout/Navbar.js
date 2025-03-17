@@ -8,10 +8,9 @@ const Navbar = () => {
   const toggleMenu = () => setMenuOpen(!menuOpen);
   const closeMenu = () => setMenuOpen(false);
 
-  // Function to handle smooth scrolling
   const handleScroll = (sectionId) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
-    closeMenu(); // Close the menu after clicking a link
+    closeMenu();
   };
 
   return (
@@ -23,7 +22,10 @@ const Navbar = () => {
         <li><a href="#home" onClick={() => handleScroll("home")}>Home</a></li>
         <li><a href="#about" onClick={() => handleScroll("about")}>About</a></li>
         <li><a href="#projects" onClick={() => handleScroll("projects")}>Projects</a></li>
-        <li><a href="#contact" onClick={() => handleScroll("contact")}>Contact</a></li>
+        <li><a href="#contact" 
+        // onClick={() => handleScroll("contact")}
+         >
+          Contact</a></li>
       </ul>
 
       {/* Hamburger Menu (Mobile) */}
