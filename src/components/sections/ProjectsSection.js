@@ -13,7 +13,7 @@ import {
 } from "@mui/material";
 import { projects, certificates, techStacks } from "../../data/projectData";
 import Tilt from "react-parallax-tilt";
-
+import TechSection from "./TechSection";
 const tabStyles = {
   color: "rgba(0, 0, 0, 0.7)",
   fontWeight: "bold",
@@ -37,6 +37,7 @@ const ProjectSection = () => {
       <Tabs
         value={activeTab}
         onChange={handleChange}
+        aria-label="Project Sections Tabs"
         centered
         sx={{
           "& .MuiTabs-indicator": { backgroundColor: "#00bcd4" },
@@ -49,22 +50,20 @@ const ProjectSection = () => {
 
       <Divider sx={{ my: 2, bgcolor: "rgba(255, 255, 255, 0.1)" }} />
 
-      {/* Projects Section */}
       {activeTab === 0 && (
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
           <Grid container spacing={3} justifyContent="center">
             {projects.map((project, index) => (
               <Grid item xs={12} sm={6} md={4} key={index}>
-                <Tilt tiltMaxAngleX={15} tiltMaxAngleY={15} scale={1.00} transitionSpeed={500}>
-                  <motion.div whileHover={{ scale: 1.00 }} whileTap={{ scale: 0.95 }}>
+                <Tilt tiltMaxAngleX={15} tiltMaxAngleY={15} scale={1.02} transitionSpeed={500}>
+                  <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
                     <Card
                       sx={{
                         background: "rgba(0, 0, 0, 0.7)",
                         borderRadius: 3,
                         overflow: "hidden",
                         boxShadow: "0px 5px 15px rgba(0, 255, 255, 0.3)",
-                        minHeight: 550,
-                        // maxHeight: 500,
+                        minHeight: "auto",
                         transition: "0.3s",
                         "&:hover": { transform: "translateY(-5px)" },
                       }}
@@ -73,7 +72,8 @@ const ProjectSection = () => {
                         src={project.image}
                         alt={project.title}
                         width="100%"
-                        style={{ borderTopLeftRadius: 12, borderTopRightRadius: 12 ,}}
+                        loading="lazy"
+                        style={{ borderTopLeftRadius: 12, borderTopRightRadius: 12, objectFit: "cover" }}
                       />
                       <CardContent>
                         <Typography variant="h6" fontWeight="bold" color="#00bcd4" gutterBottom>
@@ -86,6 +86,7 @@ const ProjectSection = () => {
                           variant="contained"
                           href={project.liveLink}
                           target="_blank"
+                          aria-label={`Visit ${project.title}`}
                           sx={{
                             mt: 1,
                             background: "#00bcd4",
@@ -114,8 +115,10 @@ const ProjectSection = () => {
                   src={cert.image}
                   alt={cert.title}
                   width="100%"
+                  loading="lazy"
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.3 }}
+                  style={{ objectFit: "cover", borderRadius: 8 }}
                 />
               </Grid>
             ))}
@@ -133,24 +136,7 @@ const ProjectSection = () => {
 
       {/* Tech Stack Section */}
       {activeTab === 2 && (
-        <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
-          <Grid container spacing={3} justifyContent="center">
-            {techStacks.map((tech, index) => (
-              <Grid item xs={4} sm={3} md={2} key={index}>
-                <motion.img
-                  whileHover={{ scale: 1.2, rotate: 5 }}
-                  src={tech.image}
-                  alt={tech.name}
-                  width="60px"
-                  transition={{ duration: 0.3 }}
-                />
-                <Typography variant="body2" color="#ffffff" mt={1}>
-                  {tech.name}
-                </Typography>
-              </Grid>
-            ))}
-          </Grid>
-        </motion.div>
+        <TechSection/>
       )}
     </Box>
   );

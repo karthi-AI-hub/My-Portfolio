@@ -8,3 +8,134 @@ body {
   }
 
   
+  .skills-section {
+    padding: 3rem 2rem;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  
+  .section-title {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    color: #333;
+  }
+  
+  /* Grid Layout */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    justify-content: center;
+  }
+  
+  /* Skill Cards */
+  .skill-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+  }
+  
+  /* Icon Styling */
+  .skill-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Skill Name */
+  .skill-name {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Hover Effects */
+  .skill-card:hover {
+    transform: scale(1.05);
+  }
+  
+
+  .tech-stack-section {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(to right, #1e1e1e, #252525);
+  }
+  
+  .tech-stack-section .section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    letter-spacing: 1.5px;
+  }
+  
+  .tech-stack-section .skills-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .tech-stack-section .skill-category {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 30px;
+    border-radius: 15px;
+    transition: 0.3s;
+  }
+  
+  .tech-stack-section .skill-category:hover {
+    background: rgba(255, 255, 255, 0.12);
+  }
+  
+  .tech-stack-section .category-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #e3e3e3;
+    text-transform: uppercase;
+  }
+  
+  .tech-stack-section .skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+  }
+  
+  .tech-stack-section .skill-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 18px;
+    border-radius: 12px;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s;
+    cursor: pointer;
+    width: 120px;
+  }
+  
+  .tech-stack-section .skill-card:hover {
+    box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.2);
+  }
+  
+  .tech-stack-section .skill-icon {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.2s;
+  }
+  
+  .tech-stack-section .skill-card:hover .skill-icon {
+    transform: scale(1.2);
+  }
+  
+  .tech-stack-section .skill-name {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+    margin-top: 10px;
+  }
+  

@@ -22,6 +22,7 @@ const Navbar = () => {
         <li><a href="#home" onClick={() => handleScroll("home")}>Home</a></li>
         <li><a href="#about" onClick={() => handleScroll("about")}>About</a></li>
         <li><a href="#projects" onClick={() => handleScroll("projects")}>Projects</a></li>
+        <li><a href="#skills" onClick={() => handleScroll("skills")}>Skills</a></li>
         <li><a href="#contact" 
         // onClick={() => handleScroll("contact")}
          >
