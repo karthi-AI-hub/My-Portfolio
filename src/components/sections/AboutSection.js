@@ -1,66 +1,102 @@
 import React from "react";
+import { Box, Typography, Button, Grid, Card, CardContent } from "@mui/material";
 import { motion } from "framer-motion";
-import { FaDownload, FaPhone, FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
-import { Timeline, TimelineItem } from "@mui/lab";
-import { Card, CardContent } from "@/components/ui/card";
 
-const skills = [
-  { name: "Full-Stack Development", level: "90%" },
-  { name: "Android Development", level: "85%" },
-  { name: "Cross-Platform Development", level: "80%" },
-  { name: "E-commerce Applications", level: "75%" },
-  { name: "Web Development (Static & Dynamic)", level: "95%" }
-];
+// Framer Motion Animations
+const fadeIn = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+};
 
-const experience = [
-  { year: "2025", title: "SAIL Health Portal", description: "Developed a web app for managing employee medical reports at Steel Authority of India Limited." },
-  { year: "2025", title: "Track My Grade", description: "Android app for students & faculties to calculate CGPA and manage mark sheets." }
-];
+const scaleUp = {
+  hidden: { opacity: 0, scale: 0.9 },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.8 } },
+};
 
-export default function AboutMe() {
+const AboutSection = () => {
   return (
-    <section className="p-6 md:p-12 lg:p-16">
-      <motion.h1 className="text-4xl font-bold mb-4" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
+    <Box id="about" sx={{ py: 12, px: 3, bgcolor: "#f9fafb", textAlign: "center" }}>
+      {/* Section Title */}
+      <Typography
+        component={motion.h2}
+        variants={fadeIn}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variant="h3"
+        fontWeight="bold"
+        color="primary"
+        mb={4}
+      >
         About Me
-      </motion.h1>
-      
-      <motion.p className="text-lg mb-6" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
-        I am a passionate Full-Stack and Mobile Developer with expertise in Android, Cross-Platform, and Web Development.
-        I create high-quality, scalable applications ranging from static sites to e-commerce platforms.
-      </motion.p>
+      </Typography>
 
-      <h2 className="text-2xl font-semibold mt-8">Skills</h2>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
-        {skills.map((skill, index) => (
-          <Card key={index} className="p-4 shadow-md">
+      <Grid container spacing={4} justifyContent="center">
+        <Grid item xs={12} md={8}>
+          {/* Card Container */}
+          <Card
+            component={motion.div}
+            variants={scaleUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            sx={{
+              p: 5,
+              borderRadius: 3,
+              boxShadow: 5,
+              backgroundColor: "white",
+              textAlign: "left",
+            }}
+          >
             <CardContent>
-              <h3 className="text-lg font-bold">{skill.name}</h3>
-              <div className="w-full bg-gray-200 rounded-md h-2 mt-2">
-                <div className="bg-blue-500 h-2 rounded-md" style={{ width: skill.level }}></div>
-              </div>
+              {/* Introduction */}
+              <Typography variant="h5" fontWeight="bold" color="secondary" mb={2}>
+                Full-Stack & Mobile Developer | Passion for Innovation & Problem-Solving
+              </Typography>
+
+              {/* Tech Journey */}
+              <Typography variant="body1" color="textSecondary" mb={3} lineHeight={1.8}>
+                My journey began with <strong>Python</strong>, diving into the fascinating world of 
+                <strong> Machine Learning & AI</strong>. My curiosity drove me to explore <strong>Java, C++,</strong> and more.
+              </Typography>
+
+              <Typography variant="body1" color="textSecondary" mb={3} lineHeight={1.8}>
+                Entering <strong>Web Development</strong>, I mastered <strong>HTML, CSS, JavaScript, and PHP</strong>. This evolved into 
+                <strong> Full-Stack Development</strong>, where I built scalable applications using <strong>React.js, Node.js, and Firebase</strong>.
+              </Typography>
+
+              {/* Mobile Development */}
+              <Typography variant="body1" color="textSecondary" mb={3} lineHeight={1.8}>
+                My venture into <strong style={{ color: "#1976d2" }}>Mobile Development</strong> led me to successfully 
+                <strong style={{ color: "#1976d2" }}> publish two apps on the Play Store</strong>. While monetizing through 
+                <strong> AdMob</strong>, I gained experience handling <strong>Play Console & AdMob policies</strong>, refining 
+                my expertise in backend development.
+              </Typography>
+
+              {/* Final Specialization */}
+              <Typography variant="body1" fontWeight="bold" color="primary" mt={2}>
+                Today, I specialize in <strong>React.js, Node.js, Firebase, and Mobile App Development</strong>, 
+                building high-performance applications that enhance digital experiences.
+              </Typography>
             </CardContent>
           </Card>
-        ))}
-      </div>
+        </Grid>
+      </Grid>
 
-      <h2 className="text-2xl font-semibold mt-8">Experience & Projects</h2>
-      <Timeline>
-        {experience.map((exp, index) => (
-          <TimelineItem key={index}>
-            <h3 className="text-lg font-semibold">{exp.title} ({exp.year})</h3>
-            <p className="text-gray-600">{exp.description}</p>
-          </TimelineItem>
-        ))}
-      </Timeline>
-      
-      <div className="flex space-x-4 mt-8">
-        <a href="/resume.pdf" className="bg-blue-500 text-white px-4 py-2 rounded flex items-center">
-          <FaDownload className="mr-2" /> Download Resume
-        </a>
-        <a href="mailto:karthikeyanks463@gmail.com" className="bg-green-500 text-white px-4 py-2 rounded flex items-center">
-          <FaEnvelope className="mr-2" /> Contact Me
-        </a>
-      </div>
-    </section>
+      {/* Call-to-Action Button */}
+      <Button
+        component={motion.button}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        variant="contained"
+        color="secondary"
+        sx={{ mt: 5, px: 4, py: 1.5, fontSize: "1rem", borderRadius: 2 }}
+        onClick={() => window.open("https://google.com", "_blank")}
+      >
+        Learn More
+      </Button>
+    </Box>
   );
-}
+};
+
+export default AboutSection;

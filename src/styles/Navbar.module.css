@@ -1,0 +1,115 @@
+/* Navbar Container */
+.navbar {
+    background: #111;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    flex: 1;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease-in-out;
+}
+
+/* Logo */
+.logo {
+    color: #f89d56;
+    font-size: 1.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+.logo:hover {
+    color: #ffb577;
+}
+
+/* Desktop Navigation */
+.navLinks {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.navLinks li {
+    position: relative;
+}
+
+.navLinks li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+/* Hover & Active Link Styling */
+.navLinks li a:hover,
+.navLinks li a.active {
+    color: #f89d56;
+}
+
+.navLinks li a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #f89d56;
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-50%);
+}
+
+.navLinks li a:hover::after,
+.navLinks li a.active::after {
+    width: 100%;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #fff;
+    background: none;
+    border: none;
+}
+
+/* Mobile Navigation */
+.mobileNav {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #111;
+    width: 200px;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    list-style: none;
+}
+
+.mobileNav li {
+    padding: 10px;
+}
+
+.mobileNav li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .navLinks {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}

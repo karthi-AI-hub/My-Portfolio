@@ -1,23 +1,59 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import "../../styles/Navbar.css";
+import { motion, AnimatePresence } from "framer-motion";
+import styles from "../../styles/Navbar.module.css";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+  const closeMenu = () => setMenuOpen(false);
+
+  // Function to handle smooth scrolling
+  const handleScroll = (sectionId) => {
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+    closeMenu(); // Close the menu after clicking a link
+  };
+
   return (
-    <nav className="navbar">
-      <div className="logo">
-        <Link to="/">Karthikeyan</Link>
-      </div>
-      <div className={`menu-toggle ${menuOpen ? "active" : ""}`} onClick={() => setMenuOpen(!menuOpen)}>
-        ☰
-      </div>
-      <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
-        <li><Link to="/about">About</Link></li>
-        <li><Link to="/projects">Projects</Link></li>
-        <li><Link to="/contact">Contact</Link></li>
+    <nav className={styles.navbar}>
+      <div className={styles.logo}>Karthi-NexGen</div>
+
+      {/* Desktop Navigation */}
+      <ul className={`${styles.navLinks} ${menuOpen ? styles.open : ""}`}>
+        <li><a href="#home" onClick={() => handleScroll("home")}>Home</a></li>
+        <li><a href="#about" onClick={() => handleScroll("about")}>About</a></li>
+        <li><a href="#projects" onClick={() => handleScroll("projects")}>Projects</a></li>
+        <li><a href="#contact" onClick={() => handleScroll("contact")}>Contact</a></li>
       </ul>
+
+      {/* Hamburger Menu (Mobile) */}
+      <motion.button
+        className={styles.hamburger}
+        onClick={toggleMenu}
+        whileTap={{ scale: 0.9 }}
+        aria-expanded={menuOpen}
+        aria-label="Toggle Navigation"
+      >
+        ☰
+      </motion.button>
+
+      {/* Mobile Navigation (Animated) */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.ul
+            className={styles.mobileNav}
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.3 }}
+          >
+            <li><a href="#home" onClick={() => handleScroll("home")}>Home</a></li>
+            <li><a href="#about" onClick={() => handleScroll("about")}>About</a></li>
+            <li><a href="#projects" onClick={() => handleScroll("projects")}>Projects</a></li>
+            <li><a href="#contact" onClick={() => handleScroll("contact")}>Contact</a></li>
+          </motion.ul>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };
