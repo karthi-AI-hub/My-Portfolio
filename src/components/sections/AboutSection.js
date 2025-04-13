@@ -84,7 +84,7 @@ const AboutSection = () => {
       </Grid>
 
       {/* Call-to-Action Button */}
-      <Button
+      {/* <Button
         component={motion.button}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
@@ -94,7 +94,7 @@ const AboutSection = () => {
         onClick={() => window.open("https://google.com", "_blank")}
       >
         Learn More
-      </Button>
+      </Button> */}
     </Box>
   );
 };

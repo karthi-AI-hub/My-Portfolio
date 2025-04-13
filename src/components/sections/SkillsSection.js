@@ -1,18 +1,18 @@
 import React from "react";
 import { motion } from "framer-motion";
-import "../../styles/global.css";
+import "../../styles/SkillSection.css";
 import { FaReact, FaNodeJs, FaAndroid, FaShoppingCart, FaLaptopCode } from "react-icons/fa";
 import { SiFlutter, SiMongodb, SiFirebase, SiGraphql } from "react-icons/si";
 
 // Skill Data
 const skills = [
-  { id: 1, name: "Full-Stack Development", icon: <FaLaptopCode />, color: "#ff5722" },
-  { id: 2, name: "Android Development", icon: <FaAndroid />, color: "#4caf50" },
+  { id: 1, name: "Android Development", icon: <FaAndroid />, color: "#4caf50" },
+  { id: 2, name: "Full-Stack Development", icon: <FaLaptopCode />, color: "#ff5722" },
   { id: 3, name: "Cross-Platform Apps", icon: <SiFlutter />, color: "#2196f3" },
   { id: 4, name: "E-Commerce Solutions", icon: <FaShoppingCart />, color: "#ff9800" },
-  { id: 5, name: "React & React Native", icon: <FaReact />, color: "#61dafb" },
+  { id: 5, name: "React", icon: <FaReact />, color: "#61dafb" },
   { id: 6, name: "Node.js & Backend", icon: <FaNodeJs />, color: "#8bc34a" },
-  { id: 7, name: "GraphQL API", icon: <SiGraphql />, color: "#e535ab" },
+  { id: 7, name: "Axios", icon: <SiFirebase />, color: "#0078d7" }, // Updated to Axios
   { id: 8, name: "MongoDB & Firebase", icon: <SiMongodb />, color: "#4db33d" },
 ];
 
@@ -51,7 +51,9 @@ const SkillSection = () => {
             whileTap={{ scale: 0.95 }}
             style={{ borderBottom: `4px solid ${skill.color}` }}
           >
-            <div className="skill-icon" style={{ color: skill.color }}>{skill.icon}</div>
+            <div className="skill-icon" style={{ color: skill.color }} aria-label={skill.name}>
+              {skill.icon}
+            </div>
             <h3 className="skill-name">{skill.name}</h3>
           </motion.div>
         ))}

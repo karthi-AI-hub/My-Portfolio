@@ -1,0 +1,62 @@
+/* ProjectSection.css */
+.project-section {
+    padding: 50px 20px;
+    background: rgba(0, 0, 0, 0.6); /* Glass effect */
+    border-radius: 15px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    margin: 20px auto;
+    max-width: 1200px;
+    text-align: center;
+}
+
+.project-section h2 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 25px;
+}
+
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 15px;
+    width: 160px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+.project-card img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.project-card span {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.project-card:hover {
+    transform: scale(1.08);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.15);
+}

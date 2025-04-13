@@ -17,7 +17,7 @@ const Hero = () => {
       <motion.div className="hero-buttons" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
         <button className="btn"  onClick={() => handleScroll("projects")}>View Projects</button>
         <button className="btn">Download Resume</button>
-        <button className="btn">Contact Me</button>
+        <button className="btn" onClick={() => handleScroll("contact")}>Contact Me</button>
       </motion.div>
     </section>
   );

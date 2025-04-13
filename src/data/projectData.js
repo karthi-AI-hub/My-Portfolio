@@ -5,7 +5,7 @@ export const projects = [
       description:
         "Health Application for timely care & telemedicine, supporting all platforms (Android, iOS, Windows, Linux, MacOS, Desktop, and Mobile).",
       techStack: ["Flutter", "Firebase Auth", "Firebase Firestore", "Supabase Storage"],
-      image: "images/logos/karthiNexGen.png",
+      image: "images/logos/karthiNexGen.jpg",
       liveLink: "https://curosync-app.web.app",
     },
     {
@@ -14,7 +14,7 @@ export const projects = [
       description:
         "An Android app for students & faculties to calculate CGPA, upload mark sheets, and visualize progress. Published on Play Store.",
       techStack: ["Java", "XML"],
-      image: "images/logos/karthiNexGen.png",
+      image: "images/logos/karthiNexGen.jpg",
       liveLink: "https://play.google.com/store/apps/details?id=com.student_developer.track_my_grade",
     },
     {
@@ -23,7 +23,7 @@ export const projects = [
       description:
         "Android application that allows students to earn by watching ads. Currently under review in the Play Console.",
       techStack: ["Java", "XML"],
-      image: "images/logos/karthiNexGen.png",
+      image: "images/logos/karthiNexGen.jpg",
     },
     {
       id: 4,
@@ -68,27 +68,17 @@ export const projects = [
     {
       id: 1,
       title: "Google Cloud Certification",
-      image: "images/logos/karthiNexGen.png",
+      image: "images/logos/karthiNexGen.jpg",
     },
     {
       id: 2,
       title: "Microsoft Azure Fundamentals",
-      image: "images/logos/karthiNexGen.png",
+      image: "images/logos/karthiNexGen.jpg",
     },
     {
       id: 3,
       title: "Coursera Machine Learning",
-      image: "images/logos/karthiNexGen.png",
+      image: "images/logos/karthiNexGen.jpg",
     },
     // Add more certificates...
-  ];
-  
-  export const techStacks = [
-    { id: 1, name: "React.js", image: "images/logos/karthiNexGen.png",    },
-    { id: 2, name: "React.js", image: "images/logos/karthiNexGen.png",    },
-    { id: 3, name: "React.js", image: "images/logos/karthiNexGen.png",    },
-    { id: 4, name: "React.js", image: "images/logos/karthiNexGen.png",    },
-    { id: 5, name: "React.js", image: "images/logos/karthiNexGen.png",    },
-    { id: 5, name: "React.js", image: "images/logos/karthiNexGen.png",    },
-    // Add more tech stacks...
   ];

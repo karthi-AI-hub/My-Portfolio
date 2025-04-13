@@ -67,7 +67,7 @@ Contributions are welcome! If you find an issue or want to enhance this project,
 
 🐙 GitHub: https://github.com/karthi-AI-hub
 
-💼 LinkedIn: your-linkedin-profile
+💼 LinkedIn: https://www.linkedin.com/in/k4rthi
 
 
 ## ✅ License
